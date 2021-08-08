@@ -1,6 +1,9 @@
 (defun isi-sum (l)
   (apply '+ l))
 
+(defun isi-product (l)
+  (apply '* l))
+
 (defun isi-factorial (n)
   (cond ((= 1 n) 1)
 	((= 0 n) 1)

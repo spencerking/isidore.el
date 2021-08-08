@@ -8,6 +8,18 @@
   (should (eql (isi-sum '(1 2 3 4 5 6 7 8 9 10)) 55))
   (should (eql (isi-sum '(-12 3 -5 -76)) -90)))
 
+(ert-deftest ert-test-product ()
+  (should (eql (isi-product '(0)) 0))
+  (should (eql (isi-product '(1)) 1))
+  (should (eql (isi-product '(0 5 6 7)) 0))
+  (should (eql (isi-product '(2 2 3)) 12))
+  (should (eql (isi-product '(-1 12)) -12))
+  (should (eql (isi-product '(5 10 2)) 100))
+  (should (eql (isi-product '(12 -12 3)) -432))
+  (should (eql (isi-product '(1.0)) 1.0))
+  (should (eql (isi-product '(1.1 2 3)) 6.6000000000000005))
+  (should (eql (isi-product '(12 3.75 -1)) -45.0)))
+
 (ert-deftest ert-test-factorial ()
   (should (eql (isi-factorial 0) 1))
   (should (eql (isi-factorial 1) 1))
