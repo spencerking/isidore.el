@@ -1,5 +1,13 @@
 (load "~/Documents/isidore.el/isidore.el") ; TODO: make relative path
 
+(ert-deftest ert-test-sum ()
+  (should (eql (isi-sum '(0)) 0))
+  (should (eql (isi-sum '(1)) 1))
+  (should (eql (isi-sum '(1 2)) 3))
+  (should (eql (isi-sum '(-1 100)) 99))
+  (should (eql (isi-sum '(1 2 3 4 5 6 7 8 9 10)) 55))
+  (should (eql (isi-sum '(-12 3 -5 -76)) -90)))
+
 (ert-deftest ert-test-factorial ()
   (should (eql (isi-factorial 0) 1))
   (should (eql (isi-factorial 1) 1))

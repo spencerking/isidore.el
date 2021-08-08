@@ -1,3 +1,6 @@
+(defun isi-sum (l)
+  (apply '+ l))
+
 (defun isi-factorial (n)
   (cond ((= 1 n) 1)
 	((= 0 n) 1)
@@ -9,7 +12,7 @@
   (/ (isi-factorial n) (* (isi-factorial k) (isi-factorial (- n k)))))
 
 (defun isi-mean (l)
-  (/ (apply '+ l) (length l)))
+  (/ (isi-sum l) (length l)))
 
 ; TODO: Return an error for single element lists
 (defun isi-range (l)
