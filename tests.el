@@ -18,6 +18,16 @@
   (should (eql (isi-binomial-coefficient 10 4) 210))
   (should (eql (isi-binomial-coefficient 100 2) 4950)))
 
+(ert-deftest ert-test-mean ()
+  (should (eql (isi-mean '(0)) 0))
+  (should (eql (isi-mean '(1)) 1))
+  (should (eql (isi-mean '(1 1)) 1))
+  (should (eql (isi-mean '(1 2 3)) 2))
+  (should (eql (isi-mean '(10 47 3 812)) 218))
+  (should (eql (isi-mean '(1.1)) 1.1))
+  (should (eql (isi-mean '(1.1 12 2 0 57 6.4)) 13.083333333333334))
+  (should (eql (isi-mean '(0.1 -5 2 -1)) -0.9750000000000001)))
+
 (ert-deftest ert-test-fishers-exact-test ()
   (should (eql (isi-fishers-exact-test 3 1 1 3) 0.22857142857142856))
   (should (eql (isi-fishers-exact-test 1 11 9 3) 0.0013460761879122358))

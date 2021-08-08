@@ -8,6 +8,10 @@
 (defun isi-binomial-coefficient (n k)
   (/ (isi-factorial n) (* (isi-factorial k) (isi-factorial (- n k)))))
 
+
+(defun isi-mean (l)
+  (/ (apply '+ l) (length l)))
+
 ; a and c are the positive and negative counts for class 1
 ; b and d are the positive and negative counts for class 2
 (defun isi-fishers-exact-test (a b c d)
