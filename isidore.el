@@ -4,6 +4,9 @@
 (defun isi-product (l)
   (apply '* l))
 
+(defun isi-square (n)
+  (expt n 2))
+
 (defun isi-factorial (n)
   (cond ((= 1 n) 1)
 	((= 0 n) 1)

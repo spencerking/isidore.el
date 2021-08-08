@@ -20,6 +20,15 @@
   (should (eql (isi-product '(1.1 2 3)) 6.6000000000000005))
   (should (eql (isi-product '(12 3.75 -1)) -45.0)))
 
+(ert-deftest ert-test-square ()
+  (should (eql (isi-square 0) 0))
+  (should (eql (isi-square 1) 1))
+  (should (eql (isi-square -1) 1))
+  (should (eql (isi-square 2) 4))
+  (should (eql (isi-square -2) 4))
+  (should (eql (isi-square 10) 100))
+  (should (eql (isi-square 100) 10000)))
+
 (ert-deftest ert-test-factorial ()
   (should (eql (isi-factorial 0) 1))
   (should (eql (isi-factorial 1) 1))
