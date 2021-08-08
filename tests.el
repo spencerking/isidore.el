@@ -28,6 +28,13 @@
   (should (eql (isi-mean '(1.1 12 2 0 57 6.4)) 13.083333333333334))
   (should (eql (isi-mean '(0.1 -5 2 -1)) -0.9750000000000001)))
 
+(ert-deftest ert-test-range ()
+  (should (eql (isi-range '(1 0)) 1))
+  (should (eql (isi-range '(0 1)) 1))
+  (should (eql (isi-range '(-5 -100)) 95))
+  (should (eql (isi-range '(2 10 11 21 23 23 22 38 38)) 36))
+  (should (eql (isi-range '(2 10 11 21 23 23 22 38 38 -38)) 76)))
+
 (ert-deftest ert-test-fishers-exact-test ()
   (should (eql (isi-fishers-exact-test 3 1 1 3) 0.22857142857142856))
   (should (eql (isi-fishers-exact-test 1 11 9 3) 0.0013460761879122358))
