@@ -1,4 +1,4 @@
-(load "~/Documents/isidore.el/isidore.el") ; TODO: make relative path
+(load "~/Documents/isidore.el/isidore.el") ;; TODO: make relative path
 
 (ert-deftest ert-test-sum ()
   (should (eql (isi-sum '(0)) 0))
@@ -46,6 +46,15 @@
   (should (eql (isi-binomial-coefficient 6 2) 15))
   (should (eql (isi-binomial-coefficient 10 4) 210))
   (should (eql (isi-binomial-coefficient 100 2) 4950)))
+
+(ert-deftest ert-test-is-subset ()
+  (should (eql (isi-is-subset '() '(1)) t))
+  (should (eql (isi-is-subset '() '(1 2 3 4 5 1000)) t))
+  (should (eql (isi-is-subset '(1) '(1)) t))
+  (should (eql (isi-is-subset '(1) '(1 2)) t))
+  (should (eql (isi-is-subset '(1) '(2 3 4)) nil))
+  (should (eql (isi-is-subset '(2 3 6) '(2 3 4 5 6 7)) t))
+  (should (eql (isi-is-subset '(1 2 3 6) '(2 3 4 5 6 7)) nil)))
 
 (ert-deftest ert-test-mean ()
   (should (eql (isi-mean '(0)) 0))
