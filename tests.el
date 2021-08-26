@@ -47,6 +47,15 @@
   (should (eql (isi-binomial-coefficient 10 4) 210))
   (should (eql (isi-binomial-coefficient 100 2) 4950)))
 
+(ert-deftest ert-test-is-set ()
+  (should (eql (isi-is-set '()) t))
+  (should (eql (isi-is-set '(1)) t))
+  (should (eql (isi-is-set '(1 2 3 60 400 1002)) t))
+  (should (eql (isi-is-set '("a" "b" "c" "w" "x" "y" "z")) t))
+  (should (eql (isi-is-set '(2 2 2)) nil))
+  (should (eql (isi-is-set '(2 2 2 3 4 5)) nil))
+  )
+
 (ert-deftest ert-test-is-subset ()
   (should (eql (isi-is-subset '() '(1)) t))
   (should (eql (isi-is-subset '() '(1 2 3 4 5 1000)) t))

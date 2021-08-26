@@ -25,6 +25,16 @@
 
 ;; Sets
 
+;; TODO: Check if a comparison using delete-dups is faster
+(defun isi-is-set (s)
+  (setq ret t)
+  (while s
+    (if (not (memq (car s) (cdr s))) (setq ret t)
+      (setq ret nil)
+      (setq s nil))
+    (setq s (cdr s)))
+  ret)
+
 ;; TODO: Validate that s1 and s2 are valid sets
 (defun isi-is-subset (s1 s2)
   (setq ret t)
