@@ -45,6 +45,14 @@
     (setq s1 (cdr s1)))
   ret)
 
+;; TODO: Validate that s1 and s2 are valid sets
+(defun isi-set-intersection (s1 s2)
+  (setq intersection '())
+  (while s1
+    (if (memq (car s1) s2) (push (car s1) intersection))
+    (setq s1 (cdr s1)))
+  (delete-dups intersection)) ;; delete-dups is only necessary because we haven't validated the sets
+
 ;; Statistics
 
 (defun isi-mean (l)
