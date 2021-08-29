@@ -65,14 +65,14 @@
   (should (eql (isi-is-subset '(2 3 6) '(2 3 4 5 6 7)) t))
   (should (eql (isi-is-subset '(1 2 3 6) '(2 3 4 5 6 7)) nil)))
 
-(ert-deftest ert-test-is-set-intersection ()
+(ert-deftest ert-test-set-intersection ()
   (should (equal (isi-set-intersection '(1) '(1)) '(1)))
   (should (equal (isi-set-intersection '(1) '(1 1 1)) '(1)))
   (should (equal (isi-set-intersection '(1 1) '(1 1 1)) '(1)))
   (should (equal (isi-set-intersection '(1 2 5) '(1 2 3 4 5)) '(5 2 1)))
   (should (equal (isi-set-intersection '(7 8 100 54) '(1 2 3 4 5)) '())))
 
-(ert-deftest ert-test-is-set-union ()
+(ert-deftest ert-test-set-union ()
   (should (equal (isi-set-union '() '()) '()))
   (should (equal (isi-set-union '() '(1)) '(1)))
   (should (equal (isi-set-union '(1) '(1)) '(1)))
