@@ -56,6 +56,13 @@
 (defun isi-set-union (s1 s2)
   (delete-dups (append s1 s2)))
 
+(defun isi-set-difference (s1 s2)
+  (setq diff '())
+  (while s1
+    (if (not (memq (car s1) s2)) (push (car s1) diff))
+    (setq s1 (cdr s1)))
+  (delete-dups diff)) ;; delete-dups is only necessary because we haven't validated the sets
+
 ;; Statistics
 
 (defun isi-mean (l)

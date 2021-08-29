@@ -80,6 +80,17 @@
   (should (equal (isi-set-union '(1) '(1 2 3.1)) '(1 2 3.1)))
   (should (equal (isi-set-union '(1 -5 6 7) '(1 2 3.1 54)) '(1 -5 6 7 2 3.1 54))))
 
+(ert-deftest ert-test-set-difference ()
+  (should (equal (isi-set-difference '() '()) '()))
+  (should (equal (isi-set-difference '(1) '(1)) '()))
+  (should (equal (isi-set-difference '(1) '()) '(1)))
+  (should (equal (isi-set-difference '() '(1)) '()))
+  (should (equal (isi-set-difference '(1 2 3) '(2 3 4)) '(1)))
+  (should (equal (isi-set-difference '(2 3 4) '(1 2 3)) '(4)))
+  (should (equal (isi-set-difference '(0 2 3 4 5.71 -12) '(1 2 3 -1 5.7 1000)) '(-12 5.71 4 0)))
+  (should (equal (isi-set-difference '(1 2 3 4 5 6 7 8 9) '(1 2 3)) '(9 8 7 6 5 4)))
+  (should (equal (isi-set-difference '(1 2 3) '(1 2 3 4 5 6 7 8 9)) '())))
+
 (ert-deftest ert-test-mean ()
   (should (eql (isi-mean '(0)) 0))
   (should (eql (isi-mean '(1)) 1))
