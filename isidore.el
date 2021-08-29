@@ -63,6 +63,18 @@
     (setq s1 (cdr s1)))
   (delete-dups diff)) ;; delete-dups is only necessary because we haven't validated the sets
 
+(defun isi-set-symmetric-difference (s1 s2)
+  (setq diff '())
+  (setq temp s1)
+  (while temp
+    (if (not (memq (car temp) s2)) (push (car temp) diff))
+    (setq temp (cdr temp)))
+  (setq temp s2)
+  (while temp
+    (if (not (memq (car temp) s1)) (push (car temp) diff))
+    (setq temp (cdr temp)))
+  (delete-dups diff)) ;; delete-dups is only necessary because we haven't validated the sets
+
 ;; Statistics
 
 (defun isi-mean (l)
