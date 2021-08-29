@@ -53,6 +53,9 @@
     (setq s1 (cdr s1)))
   (delete-dups intersection)) ;; delete-dups is only necessary because we haven't validated the sets
 
+(defun isi-set-union (s1 s2)
+  (delete-dups (append s1 s2)))
+
 ;; Statistics
 
 (defun isi-mean (l)
